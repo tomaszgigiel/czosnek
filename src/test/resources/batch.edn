@@ -1,0 +1,17 @@
+(ns pl.tomaszgigiel.czosnek.batch.edn)
+
+(defrecord action-load [file])
+(defrecord action-sql [query])
+(defrecord action-save [query file])
+
+{:version "1.0.0.0"
+ :database-connection-string "jdbc:derby:memory:czosnek-databse-test;create=true"
+ :database-user "czosnek-user"
+ :database-password "czosnek-password"
+ :database-class "org.apache.derby.jdbc.ClientDriver"
+ :actions ((action-load. "*.csv")
+            (action-load. "*.log")
+            (action-sql. "CREATE TABLE foos (id BIGINT PRIMARY KEY, something VARCHAR(9999));")
+            (action-sql. "INSERT INTO foos (id, something) SELECT id, line FROM czosnek_v0001_input_lines;")
+            (action-save. "SELECT TRIM(CAST(CAST(id AS CHAR(20)) AS VARCHAR(20))) FROM foos;" "czosnek-output-test.txt"))
+}
