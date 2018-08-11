@@ -1,5 +1,7 @@
 (ns pl.tomaszgigiel.czosnek.greenhorn-test
-  (:use [clojure.test]))
+  (:require [pl.tomaszgigiel.czosnek.core :as czosnek])
+  (:use [clojure.test])
+  (:require [pl.tomaszgigiel.czosnek.core-test-config :as mytest]))
 
 (deftest bigint-test
   (testing "BigInt test"
