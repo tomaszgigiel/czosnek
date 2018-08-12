@@ -1,0 +1,7 @@
+[2018-08-11 19:15:47,964][INFO][pl.tomaszgigiel.czosnek.core] start-derby-in-memory
+[2018-08-11 19:17:01,920][INFO][pl.tomaszgigiel.czosnek.core] start-derby-in-memory:  jdbc:derby:memory:%1$s;create=true
+[2018-08-11 19:17:30,226][INFO][pl.tomaszgigiel.czosnek.core] start-derby-in-memory:  jdbc:derby:dummy;create=true
+[2018-08-11 19:18:42,513][INFO][pl.tomaszgigiel.czosnek.core] start-derby:  jdbc:derby:dummy;create=true
+[2018-08-11 19:21:12,705][INFO][pl.tomaszgigiel.czosnek.core] start-derby-in-memory:  jdbc:derby:memory:dummy;create=true
+[2018-08-11 19:21:12,708][INFO][pl.tomaszgigiel.czosnek.core] start-derby:  jdbc:derby:dummy;create=true
+[2018-08-11 19:21:12,709][INFO][pl.tomaszgigiel.czosnek.core] start-other:  jdbc:oracle:thin:scott/tiger@//myhost:1521/myservicename

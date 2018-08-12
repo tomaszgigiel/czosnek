@@ -1,0 +1,16 @@
+(ns pl.tomaszgigiel.czosnek.batch.edn)
+
+(defrecord action-load [file])
+(defrecord action-sql [query])
+(defrecord action-save [query file])
+
+{:version "1.0.0.0"
+ :database-connection-string "jdbc:derby:memory:czosnek-databse-test;create=true"
+ :database-user "czosnek-user"
+ :database-password "czosnek-password"
+ :database-class "org.apache.derby.jdbc.ClientDriver"
+ :actions ((action-sql. {:file "irregular_verbs/01_create_czosnek_input_lines.sql"})
+            (action-load. "irregular_verbs/*.csv")
+            (action-sql. {:file "irregular_verbs/02_create_czosnek_irregular_verbs.sql"})
+            (action-save. {:file "03_report.sql" :out "czosnek-output-test.txt"}))
+}
